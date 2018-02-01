@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'activeadmin'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
