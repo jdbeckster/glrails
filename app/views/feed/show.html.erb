@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <div class="card-block">
+          <h3 class="card-title">Your Account</h3>
+          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username) %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+        <% if user_signed_in? %>
+          <%= link_to 'New Tweet', new_tweet_path %>
+        <% end %>
+        <ul class="list-group">
+          <% @tweets.each do |tweet| %>
+            <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><%= tweet.user.username %></h5>
+                <small>Upper right</small>
+              </div>
+              <p class="mb-1"><%= tweet.content %></p>
+            <% end %>                      
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

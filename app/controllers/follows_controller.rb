@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-before_action :authenticate_user!, except: [:create, :destroy]
+  before_action :authenticate_user!
 
   def create
   	user = User.find_by(username: params[:username])
@@ -12,4 +12,5 @@ before_action :authenticate_user!, except: [:create, :destroy]
   	Follow.find_by(followable: user, follower: current_user).destroy
   	redirect_to user_path(user.username), notice: "Successfully unfollowed user"
   end
+
 end
