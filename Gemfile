@@ -33,6 +33,8 @@ gem 'acts_as_votable', '~> 0.11.1'
 
 # Adds image management
 gem "paperclip", "~> 5.2.1"
+# So we can store our images on amazon S3 without losing them in 24 hours on heroku
+gem 'aws-sdk', '~> 2.3'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
