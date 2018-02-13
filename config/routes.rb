@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
- 
-
-
   ActiveAdmin.routes(self)
   devise_for :users
   as :user do
@@ -12,14 +9,21 @@ Rails.application.routes.draw do
 
   get 'feed', to: 'feed#show'
 
-
   resources :users, only: :show, param: :username do
     member do 
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'
     end
   end 
-  resources :items
+  
+  resources :items do
+    member do
+      post 'vote', to: 'votes#create'
+      delete 'unvote', to: 'votes#destroy'
+    end
+  end 
+  
+
   resources :problems
   resources :tweets
 

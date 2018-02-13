@@ -28,6 +28,10 @@ gem 'devise'
 gem 'activeadmin'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
+# Adds liking and disliking. github.com/ryanto/acts_as_votable 
+
+gem 'acts_as_votable', '~> 0.11.1'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use Redis adapter to run Action Cable in production
