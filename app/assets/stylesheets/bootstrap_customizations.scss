@@ -23,10 +23,11 @@ $gray:                      #55595c;
 $gray-light:                #818a91;
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
-$brand-primary:             #563d7c;
+
+$brand-primary:             #0275d8;
 $brand-success:             #5cb85c;
 $brand-info:                #5bc0de;
-$brand-warning:             #ffe484;
+$brand-warning:             #f0ad4e;
 $brand-danger:              #d9534f;
 $brand-inverse:             $gray-dark;
 
@@ -79,6 +80,7 @@ $font-family-base:       $font-family-sans-serif;
 $font-size-root: 16px;
 
 $font-size-base: 1rem;
+$font-size-lg:   1.25rem;
 $font-size-sm:   .875rem;
 $font-size-xs:   .75rem;
 
@@ -132,32 +134,3 @@ $navbar-light-disabled-color:       rgba(0,0,0,.15);
 
 $jumbotron-padding:              2rem;
 $jumbotron-bg:                   $gray-lighter;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

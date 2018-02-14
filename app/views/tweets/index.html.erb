@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-        <div class="card card-block">
+      <div class="card">
+        <div class="card card-body">
           <% if user_signed_in? %> 
             <h4 class="card-title">Your Account</h4>
             <p class="card-text"><%= link_to current_user.username, user_path(current_user.username) %></p>
@@ -9,6 +10,7 @@
             <p class="card-text"><%= link_to "Sign up now", signup_path %></p>
           <% end %>
         </div>
+      </div>
     </div>
 
     <div class="col-md-8">
@@ -16,22 +18,26 @@
         <% if user_signed_in? %>
           <%= link_to 'New Tweet', new_tweet_path %>
         <% end %>
-        
-        <ul class="list-group">
-          <% @tweets.each do |tweet| %>
-            <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"><%= tweet.user.username %></h5>
-                <small>Upper right</small>
-              </div>
-              <% if tweet.image.present? %>
-              <center><%= image_tag tweet.image %></center>
-              <% end %>
-              <p class="mb-1"><%= tweet.content %></p>
-            <% end %>                      
-          <% end %>
-        </ul>
 
+
+
+          <% @tweets.each do |tweet| %>
+            <%= link_to tweet do %>
+              <div class="card mb-3">
+                <% if tweet.image.present? %>
+                <!-- img class="card-img-top" src="..." alt="Card image cap"-->
+                <%= image_tag tweet.image, class: "card-img-top" %>
+                <% end %>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= tweet.user.username %></h5>
+                    <p class="card-text"><%= tweet.content %></p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
+
+          
     </div>
 
   </div>
